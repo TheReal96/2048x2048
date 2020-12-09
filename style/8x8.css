@@ -1,0 +1,1231 @@
+@import url(fonts/clear-sans.css);
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px; }
+
+body {
+  margin: 80px 0; }
+
+.heading:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  float: left; }
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@-moz-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+.scores-container {
+  float: right;
+  text-align: right; }
+
+.score-container, .best-container {
+  position: relative;
+  display: inline-block;
+  background: #bbada0;
+  padding: 15px 25px;
+  font-size: 25px;
+  height: 25px;
+  line-height: 47px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: white;
+  margin-top: 8px;
+  text-align: center; }
+  .score-container:after, .best-container:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da; }
+  .score-container .score-addition, .best-container .score-addition {
+    position: absolute;
+    right: 30px;
+    color: red;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both; }
+
+.score-container:after {
+  content: "Score"; }
+
+.best-container:after {
+  content: "Best"; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.65; }
+
+a {
+  color: #776e65;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer; }
+
+strong.important {
+  text-transform: uppercase; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid #d8d4d0;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+.container {
+  width: 956px;
+  margin: 0 auto; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+.game-container {
+  margin-top: 40px;
+  position: relative;
+  padding: 10px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background: #bbada0;
+  border-radius: 6px;
+  width: 956px;
+  height: 956px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .game-container .game-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.5);
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both; }
+    .game-container .game-message p {
+      font-size: 60px;
+      font-weight: bold;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 222px; }
+    .game-container .game-message .lower {
+      display: block;
+      margin-top: 59px; }
+    .game-container .game-message a {
+      display: inline-block;
+      background: #8f7a66;
+      border-radius: 3px;
+      padding: 0 20px;
+      text-decoration: none;
+      color: #f9f6f2;
+      height: 40px;
+      line-height: 42px;
+      margin-left: 9px; }
+    .game-container .game-message.game-won {
+      background: rgba(237, 194, 46, 0.5);
+      color: #f9f6f2; }
+    .game-container .game-message.game-won, .game-container .game-message.game-over {
+      display: block; }
+
+.grid-container {
+  position: absolute;
+  z-index: 1; }
+
+.grid-row {
+  margin-bottom: 10px; }
+  .grid-row:last-child {
+    margin-bottom: 0; }
+  .grid-row:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.grid-cell {
+  width: 108.33333px;
+  height: 108.33333px;
+  margin-right: 10px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35); }
+  .grid-cell:last-child {
+    margin-right: 0; }
+
+.tile-container {
+  position: absolute;
+  z-index: 2; }
+
+.tile {
+  width: 108.33333px;
+  height: 108.33333px;
+  line-height: 118.33333px; }
+  .tile.tile-position-1-1 {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+  .tile.tile-position-1-2 {
+    position: absolute;
+    left: 0px;
+    top: 118px; }
+  .tile.tile-position-1-3 {
+    position: absolute;
+    left: 0px;
+    top: 237px; }
+  .tile.tile-position-1-4 {
+    position: absolute;
+    left: 0px;
+    top: 355px; }
+  .tile.tile-position-1-5 {
+    position: absolute;
+    left: 0px;
+    top: 473px; }
+  .tile.tile-position-1-6 {
+    position: absolute;
+    left: 0px;
+    top: 592px; }
+.tile.tile-position-1-7 {
+	position: absolute;
+	left: 0px;
+	top: 710px;
+}
+.tile.tile-position-1-8 {
+	position: absolute;
+	left: 0px;
+	top: 828px;
+}
+  .tile.tile-position-2-1 {
+    position: absolute;
+    left: 118px;
+    top: 0px; }
+  .tile.tile-position-2-2 {
+    position: absolute;
+    left: 118px;
+    top: 118px; }
+  .tile.tile-position-2-3 {
+    position: absolute;
+    left: 118px;
+    top: 237px; }
+  .tile.tile-position-2-4 {
+    position: absolute;
+    left: 118px;
+    top: 355px; }
+  .tile.tile-position-2-5 {
+    position: absolute;
+    left: 118px;
+    top: 473px; }
+  .tile.tile-position-2-6 {
+    position: absolute;
+    left: 118px;
+    top: 592px; }
+.tile.tile-position-2-7 {
+	position: absolute;
+	left: 118px;
+	top: 710px;
+}
+.tile.tile-position-2-8 {
+	position: absolute;
+	left: 118px;
+	top: 828px;
+}
+  .tile.tile-position-3-1 {
+    position: absolute;
+    left: 237px;
+    top: 0px; }
+  .tile.tile-position-3-2 {
+    position: absolute;
+    left: 237px;
+    top: 118px; }
+  .tile.tile-position-3-3 {
+    position: absolute;
+    left: 237px;
+    top: 237px; }
+  .tile.tile-position-3-4 {
+    position: absolute;
+    left: 237px;
+    top: 355px; }
+  .tile.tile-position-3-5 {
+    position: absolute;
+    left: 237px;
+    top: 473px; }
+  .tile.tile-position-3-6 {
+    position: absolute;
+    left: 237px;
+    top: 592px; }
+.tile.tile-position-3-7 {
+	position: absolute;
+	left: 237px;
+	top: 710px;
+}
+.tile.tile-position-3-8 {
+	position: absolute;
+	left: 237px;
+	top: 828px;
+}
+  .tile.tile-position-4-1 {
+    position: absolute;
+    left: 355px;
+    top: 0px; }
+  .tile.tile-position-4-2 {
+    position: absolute;
+    left: 355px;
+    top: 118px; }
+  .tile.tile-position-4-3 {
+    position: absolute;
+    left: 355px;
+    top: 237px; }
+  .tile.tile-position-4-4 {
+    position: absolute;
+    left: 355px;
+    top: 355px; }
+  .tile.tile-position-4-5 {
+    position: absolute;
+    left: 355px;
+    top: 473px; }
+  .tile.tile-position-4-6 {
+    position: absolute;
+    left: 355px;
+    top: 592px; }
+  .tile.tile-position-4-7 {
+    position: absolute;
+    left: 355px;
+    top: 710px; }
+.tile.tile-position-4-8 {
+	position: absolute;
+	left: 0px;
+	top: 828px;
+}
+  .tile.tile-position-5-1 {
+    position: absolute;
+    left: 473px;
+    top: 0px; }
+  .tile.tile-position-5-2 {
+    position: absolute;
+    left: 473px;
+    top: 118px; }
+  .tile.tile-position-5-3 {
+    position: absolute;
+    left: 473px;
+    top: 237px; }
+  .tile.tile-position-5-4 {
+    position: absolute;
+    left: 473px;
+    top: 355px; }
+  .tile.tile-position-5-5 {
+    position: absolute;
+    left: 473px;
+    top: 473px; }
+  .tile.tile-position-5-6 {
+    position: absolute;
+    left: 473px;
+    top: 592px; }
+  .tile.tile-position-5-7 {
+    position: absolute;
+    left: 473px;
+    top: 710px; }
+.tile.tile-position-1-8 {
+	position: absolute;
+	left: 473px;
+	top: 828px;
+}
+  .tile.tile-position-6-1 {
+    position: absolute;
+    left: 592px;
+    top: 0px; }
+  .tile.tile-position-6-2 {
+    position: absolute;
+    left: 592px;
+    top: 118px; }
+  .tile.tile-position-6-3 {
+    position: absolute;
+    left: 592px;
+    top: 237px; }
+  .tile.tile-position-6-4 {
+    position: absolute;
+    left: 592px;
+    top: 355px; }
+  .tile.tile-position-6-5 {
+    position: absolute;
+    left: 592px;
+    top: 473px; }
+  .tile.tile-position-6-6 {
+    position: absolute;
+    left: 592px;
+    top: 592px; }
+  .tile.tile-position-6-7 {
+    position: absolute;
+    left: 592px;
+    top: 710px; }
+.tile.tile-position-6-8 {
+	position: absolute;
+	left: 592px;
+	top: 828px;
+}
+  .tile.tile-position-7-1 {
+    position: absolute;
+    left: 710px;
+    top: 0px; }
+  .tile.tile-position-7-2 {
+    position: absolute;
+    left: 710px;
+    top: 118px; }
+  .tile.tile-position-7-3 {
+    position: absolute;
+    left: 710px;
+    top: 236px; }
+  .tile.tile-position-7-4 {
+    position: absolute;
+    left: 710px;
+    top: 354px; }
+  .tile.tile-position-7-5 {
+    position: absolute;
+    left: 710px;
+    top: 472px; }
+  .tile.tile-position-7-6 {
+    position: absolute;
+    left: 710px;
+    top: 592px; }
+  .tile.tile-position-7-7 {
+    position: absolute;
+    left: 710px;
+    top: 710px; }
+.tile.tile-position-7-8 {
+	position: absolute;
+	left: 710px;
+	top: 828px;
+}
+  .tile.tile-position-8-1 {
+    position: absolute;
+    left: 828px;
+    top: 0px; }
+  .tile.tile-position-8-2 {
+    position: absolute;
+    left: 828px;
+    top: 118px; }
+  .tile.tile-position-8-3 {
+    position: absolute;
+    left: 828px;
+    top: 236px; }
+  .tile.tile-position-8-4 {
+    position: absolute;
+    left: 828px;
+    top: 354px; }
+  .tile.tile-position-8-5 {
+    position: absolute;
+    left: 828px;
+    top: 472px; }
+  .tile.tile-position-8-6 {
+    position: absolute;
+    left: 828px;
+    top: 592px; }
+  .tile.tile-position-8-7 {
+    position: absolute;
+    left: 828px;
+    top: 710px; }
+.tile.tile-position-8-8 {
+	position: absolute;
+	left: 828px;
+	top: 828px;
+}
+
+.tile {
+  border-radius: 3px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 55px;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  -webkit-transition-property: top, left;
+  -moz-transition-property: top, left; }
+  .tile.tile-2 {
+    background: #eee4da;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-4 {
+    background: #ede2d1;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-8 {
+    color: #f9f6f2;
+    background: #f2b282; }
+  .tile.tile-16 {
+    color: #f9f6f2;
+    background: #f59870; }
+  .tile.tile-32 {
+    color: #f9f6f2;
+    background: #f67f6f; }
+  .tile.tile-64 {
+    color: #f9f6f2;
+    background: #f6624f; }
+  .tile.tile-128 {
+    color: #f9f6f2;
+    background: #eee4da;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.006), inset 0 0 0 1px rgba(255, 255, 255, 0.0003);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-128 {
+        font-size: 25px; } }
+  .tile.tile-256 {
+    color: #f9f6f2;
+    background: #ede798;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.00999), inset 0 0 0 1px rgba(255, 255, 255, 0.001);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-256 {
+        font-size: 25px; } }
+  .tile.tile-512 {
+    color: #f9f6f2;
+    background: #ede999;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.01000), inset 0 0 0 1px rgba(255, 255, 255, 0.004);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-512 {
+        font-size: 25px; } }
+  .tile.tile-1024 {
+    color: #f9f6f2;
+    background: #edde88;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.03442), inset 0 0 0 1px rgba(255, 255, 255, 0.0497);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-1024 {
+        font-size: 19px; } }
+  .tile.tile-2048 {
+    color: #f9f6f2;
+    background: #edee88;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-2048 {
+        font-size: 19px; } }
+  .tile.tile-4096 {
+    color: #f9f6f2;
+    background: #edde00;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.07992828838), inset 0 0 0 1px rgba(255, 255, 255, 0.06588);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-4096 {
+        font-size: 19px; } }
+  .tile.tile-8192 {
+    color: #f9f6f2;
+    background: #edde99;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.096);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-8192 {
+        font-size: 19px; } }
+  .tile.tile-16384 {
+    color: #f9f6f2;
+    background: #edde7f;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.19864), inset 0 0 0 1px rgba(255, 255, 255, 0.097);
+    font-size: 32px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-16384 {
+        font-size: 15px; } }
+  .tile.tile-32768 {
+    color: #f9f6f2;
+    background: #eddd67;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.33951), inset 0 0 0 1px rgba(255, 255, 255, 0.098);
+    font-size: 32px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-32768 {
+        font-size: 15px; } }
+  .tile.tile-65536 {
+    color: #f9f6f2;
+    background: #eddb5f;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.098038);
+    font-size: 32px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-65536 {
+        font-size: 15px; } }
+  .tile.tile-131072 {
+    color: #f9f6f2;
+    background: #edda56;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2088), inset 0 0 0 1px rgba(255, 255, 255, 0.099);
+    font-size: 28px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-131072 {
+        font-size: 12px; } }
+  .tile.tile-262144 {
+    color: #f9f6f2;
+    background: #edd84e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    font-size: 28px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-262144 {
+        font-size: 12px; } }
+  .tile.tile-524288 {
+    color: #f9f6f2;
+    background: #edd646;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.10240);
+    font-size: 28px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-524288 {
+        font-size: 12px; } }
+  .tile.tile-1048576 {
+    color: #f9f6f2;
+    background: #edd53e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.33333), inset 0 0 0 1px rgba(255, 255, 255, 0.12037);
+    font-size: 24px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-1048576 {
+        font-size: 10px; } }
+  .tile.tile-2097152 {
+    color: #f9f6f2;
+    background: #edd336;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.45005), inset 0 0 0 1px rgba(255, 255, 255, 0.122463);
+    font-size: 24px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-2097152 {
+        font-size: 10px; } }
+  .tile.tile-4194304 {
+    color: #f9f6f2;
+    background: #edd22e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.4523), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+    font-size: 24px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-4194304 {
+        font-size: 10px; } }
+.tile.tile-8388608 {
+	color: #f9f6f2;
+	background: #edc914;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.33333), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+	font-size: 24px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-8388608 {
+		font-size: 10px;
+	}
+}
+.tile.tile-16777216 {
+  color: #f9f6f2; 
+  background: #edc99f; 
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.46), inset 0 0 0 1px rgba(255, 255, 255, 0.2048); 
+  font-size: 20px; }
+@media screen and (max-width: 480px) {
+	.tile.tile-16777216 {
+		font-size: 8px;
+	}
+}
+.tile.tile-33554432 {
+	color: #f9f6f2;
+	background: #edc53f;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.48), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+	font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-33554432 {
+		font-size: 8px;
+	}
+}
+.tile.tile-67108864 {
+	color: #f9f6f2;
+	background: #edc35f;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.5302), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+	font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-67108864 {
+		font-size: 8px;
+	}
+}
+.tile.tile-134217728 {
+	color: #f9f6f2;
+	background: #edc22e;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+	font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-134217728 {
+		font-size: 7px;
+	}
+}
+.tile.tile-268435456 {
+	color: #f9f6f2;
+	background: #edb000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-268435456 {
+		font-size: 7px;
+	}
+}
+.tile.tile-536870912 {
+	color: #f9f6f2;
+	background: #eda000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.65), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-536870912 {
+		font-size: 7px;
+	}
+}
+.tile.tile-1073741824 {
+	color: #f9f6f2;
+	background: #ed9000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-1073741824 {
+		font-size: 6px;
+	}
+}
+.tile.tile-2147483648 {
+	color: #f9f6f2;
+	background: #ed8000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-2147483648 {
+		font-size: 6px;
+	}
+}
+.tile.tile-4294967296 {
+	color: #f9f6f2;
+	background: #ed7000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-4294967296 {
+		font-size: 6px;
+	}
+}
+.tile.tile-8589934592 {
+	color: #f9f6f2;
+	background: #ed6000;
+	box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.85), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	font-size: 16px;
+}
+@media screen and (max-width: 480px) {
+	.tile.tile-8589934592 {
+		font-size: 6px;
+	}
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+@-moz-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+@keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+.tile-new {
+  -webkit-animation: appear 200ms ease 100ms;
+  -moz-animation: appear 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both; }
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+@-moz-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+@keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+.tile-merged {
+  z-index: 20;
+  -webkit-animation: pop 200ms ease 100ms;
+  -moz-animation: pop 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both; }
+
+.game-intro {
+  margin-bottom: 0; }
+
+.game-explanation {
+  margin-top: 50px; }
+
+@media screen and (max-width: 480px) {
+  html, body {
+    font-size: 15px; }
+
+  body {
+    margin: 20px 0;
+    padding: 0 20px; }
+
+  h1.title {
+    font-size: 60px; }
+
+  .container {
+    width: 418.6px;
+    margin: 0 auto; }
+
+  .score-container, .best-container {
+    margin-top: 0;
+    padding: 15px 10px;
+    min-width: 40px; }
+
+  .heading {
+    margin-bottom: 10px; }
+
+  .game-container {
+    margin-top: 40px;
+    position: relative;
+    padding: 6px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background: #bbada0;
+    border-radius: 6px;
+    width: 418.6px;
+    height: 418.6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .game-container .game-message {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(238, 228, 218, 0.5);
+      z-index: 100;
+      text-align: center;
+      -webkit-animation: fade-in 800ms ease 1200ms;
+      -moz-animation: fade-in 800ms ease 1200ms;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both; }
+      .game-container .game-message p {
+        font-size: 60px;
+        font-weight: bold;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 222px; }
+      .game-container .game-message .lower {
+        display: block;
+        margin-top: 59px; }
+      .game-container .game-message a {
+        display: inline-block;
+        background: #8f7a66;
+        border-radius: 3px;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #f9f6f2;
+        height: 40px;
+        line-height: 42px;
+        margin-left: 9px; }
+      .game-container .game-message.game-won {
+        background: rgba(237, 194, 46, 0.5);
+        color: #f9f6f2; }
+      .game-container .game-message.game-won, .game-container .game-message.game-over {
+        display: block; }
+
+  .grid-container {
+    position: absolute;
+    z-index: 1; }
+
+  .grid-row {
+    margin-bottom: 6px; }
+    .grid-row:last-child {
+      margin-bottom: 0; }
+    .grid-row:after {
+      content: "";
+      display: block;
+      clear: both; }
+
+  .grid-cell {
+    width: 46.33333px;
+    height: 46.33333px;
+    margin-right: 6px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35); }
+    .grid-cell:last-child {
+      margin-right: 0; }
+
+  .tile-container {
+    position: absolute;
+    z-index: 2; }
+
+  .tile {
+    width: 46.33333px;
+    height: 46.33333px;
+    line-height: 56.33333px; }
+    .tile.tile-position-1-1 {
+      position: absolute;
+      left: 0px;
+      top: 0px; }
+    .tile.tile-position-1-2 {
+      position: absolute;
+      left: 0px;
+      top: 52px; }
+    .tile.tile-position-1-3 {
+      position: absolute;
+      left: 0px;
+      top: 105px; }
+    .tile.tile-position-1-4 {
+      position: absolute;
+      left: 0px;
+      top: 157px; }
+    .tile.tile-position-1-5 {
+      position: absolute;
+      left: 0px;
+      top: 209px; }
+    .tile.tile-position-1-6 {
+      position: absolute;
+      left: 0px;
+      top: 262px; }
+    .tile.tile-position-1-7 {
+      position: absolute;
+      left: 0px;
+      top: 314px; }
+    .tile.tile-position-1-8 {
+      position: absolute;
+      left: 0px;
+      top: 366px; }
+    .tile.tile-position-2-1 {
+      position: absolute;
+      left: 52px;
+      top: 0px; }
+    .tile.tile-position-2-2 {
+      position: absolute;
+      left: 52px;
+      top: 52px; }
+    .tile.tile-position-2-3 {
+      position: absolute;
+      left: 52px;
+      top: 105px; }
+    .tile.tile-position-2-4 {
+      position: absolute;
+      left: 52px;
+      top: 157px; }
+    .tile.tile-position-2-5 {
+      position: absolute;
+      left: 52px;
+      top: 209px; }
+    .tile.tile-position-2-6 {
+      position: absolute;
+      left: 52px;
+      top: 262px; }
+    .tile.tile-position-2-7 {
+      position: absolute;
+      left: 52px;
+      top: 314px; }
+    .tile.tile-position-2-8 {
+      position: absolute;
+      left: 52px;
+      top: 366px; }
+    .tile.tile-position-3-1 {
+      position: absolute;
+      left: 105px;
+      top: 0px; }
+    .tile.tile-position-3-2 {
+      position: absolute;
+      left: 105px;
+      top: 52px; }
+    .tile.tile-position-3-3 {
+      position: absolute;
+      left: 105px;
+      top: 105px; }
+    .tile.tile-position-3-4 {
+      position: absolute;
+      left: 105px;
+      top: 157px; }
+    .tile.tile-position-3-5 {
+      position: absolute;
+      left: 105px;
+      top: 209px; }
+    .tile.tile-position-3-6 {
+      position: absolute;
+      left: 105px;
+      top: 262px; }
+    .tile.tile-position-3-7 {
+      position: absolute;
+      left: 105px;
+      top: 314px; }
+    .tile.tile-position-3-8 {
+      position: absolute;
+      left: 105px;
+      top: 366px; }
+    .tile.tile-position-4-1 {
+      position: absolute;
+      left: 157px;
+      top: 0px; }
+    .tile.tile-position-4-2 {
+      position: absolute;
+      left: 157px;
+      top: 52px; }
+    .tile.tile-position-4-3 {
+      position: absolute;
+      left: 157px;
+      top: 105px; }
+    .tile.tile-position-4-4 {
+      position: absolute;
+      left: 157px;
+      top: 157px; }
+    .tile.tile-position-4-5 {
+      position: absolute;
+      left: 157px;
+      top: 209px; }
+    .tile.tile-position-4-6 {
+      position: absolute;
+      left: 157px;
+      top: 262px; }
+    .tile.tile-position-4-7 {
+      position: absolute;
+      left: 157px;
+      top: 314px; }
+    .tile.tile-position-4-8 {
+      position: absolute;
+      left: 157px;
+      top: 366px; }
+    .tile.tile-position-5-1 {
+      position: absolute;
+      left: 209px;
+      top: 0px; }
+    .tile.tile-position-5-2 {
+      position: absolute;
+      left: 209px;
+      top: 52px; }
+    .tile.tile-position-5-3 {
+      position: absolute;
+      left: 209px;
+      top: 105px; }
+    .tile.tile-position-5-4 {
+      position: absolute;
+      left: 209px;
+      top: 157px; }
+    .tile.tile-position-5-5 {
+      position: absolute;
+      left: 209px;
+      top: 209px; }
+    .tile.tile-position-5-6 {
+      position: absolute;
+      left: 209px;
+      top: 262px; }
+    .tile.tile-position-5-7 {
+      position: absolute;
+      left: 209px;
+      top: 314px; }
+    .tile.tile-position-5-8 {
+      position: absolute;
+      left: 209px;
+      top: 366px; }
+    .tile.tile-position-6-1 {
+      position: absolute;
+      left: 262px;
+      top: 0px; }
+    .tile.tile-position-6-2 {
+      position: absolute;
+      left: 262px;
+      top: 52px; }
+    .tile.tile-position-6-3 {
+      position: absolute;
+      left: 262px;
+      top: 105px; }
+    .tile.tile-position-6-4 {
+      position: absolute;
+      left: 262px;
+      top: 157px; }
+    .tile.tile-position-6-5 {
+      position: absolute;
+      left: 262px;
+      top: 209px; }
+    .tile.tile-position-6-6 {
+      position: absolute;
+      left: 262px;
+      top: 262px; }
+    .tile.tile-position-6-7 {
+      position: absolute;
+      left: 262px;
+      top: 314px; }
+    .tile.tile-position-6-8 {
+      position: absolute;
+      left: 262px;
+      top: 366px; }
+    .tile.tile-position-7-1 {
+      position: absolute;
+      left: 314px;
+      top: 0px; }
+    .tile.tile-position-7-2 {
+      position: absolute;
+      left: 314px;
+      top: 52px; }
+    .tile.tile-position-7-3 {
+      position: absolute;
+      left: 314px;
+      top: 105px; }
+    .tile.tile-position-7-4 {
+      position: absolute;
+      left: 314px;
+      top: 157px; }
+    .tile.tile-position-7-5 {
+      position: absolute;
+      left: 314px;
+      top: 209px; }
+    .tile.tile-position-7-6 {
+      position: absolute;
+      left: 314px;
+      top: 262px; }
+    .tile.tile-position-7-7 {
+      position: absolute;
+      left: 314px;
+      top: 314px; }
+    .tile.tile-position-7-8 {
+      position: absolute;
+      left: 314px;
+      top: 366px; }
+    .tile.tile-position-8-1 {
+      position: absolute;
+      left: 366px;
+      top: 0px; }
+    .tile.tile-position-8-2 {
+      position: absolute;
+      left: 366px;
+      top: 52px; }
+    .tile.tile-position-8-3 {
+      position: absolute;
+      left: 366px;
+      top: 105px; }
+    .tile.tile-position-8-4 {
+      position: absolute;
+      left: 366px;
+      top: 157px; }
+    .tile.tile-position-8-5 {
+      position: absolute;
+      left: 366px;
+      top: 209px; }
+    .tile.tile-position-8-6 {
+      position: absolute;
+      left: 366px;
+      top: 262px; }
+    .tile.tile-position-8-7 {
+      position: absolute;
+      left: 366px;
+      top: 314px; }
+    .tile.tile-position-8-8 {
+      position: absolute;
+      left: 366px;
+      top: 366px; }
+
+  .game-container {
+    margin-top: 20px; }
+
+  .tile {
+    font-size: 35px; }
+
+  .game-message p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 90px !important; }
+  .game-message .lower {
+    margin-top: 30px !important; } }
