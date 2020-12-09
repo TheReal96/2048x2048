@@ -120,6 +120,7 @@ HTMLActuator.prototype.message = function (won) {
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
 };
 
-HTMLActuator.prototype.clearMessage = function () {
-  this.messageContainer.classList.remove("game-won", "game-over");
+  // IE only takes one value to remove at a time.
+  this.messageContainer.classList.remove("game-won");
+  this.messageContainer.classList.remove("game-over");
 };
