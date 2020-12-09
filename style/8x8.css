@@ -863,7 +863,7 @@ hr {
     font-size: 60px; }
 
   .container {
-    width: 418.6px;
+    width: 424.6px;
     margin: 0 auto; }
 
   .score-container, .best-container {
@@ -884,8 +884,8 @@ hr {
     -moz-user-select: none;
     background: #bbada0;
     border-radius: 6px;
-    width: 418.6px;
-    height: 418.6px;
+    width: 424.6px;
+    height: 424.6px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
