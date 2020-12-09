@@ -70,7 +70,7 @@ HTMLActuator.prototype.addTile = function (tile) {
       self.addTile(merged);
     });
   } else {
-    classes.push("tilenew");
+    classes.push("tile-new");
     this.applyClasses(element, classes);
   }
 
@@ -122,4 +122,4 @@ HTMLActuator.prototype.message = function (won) {
 
 HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-won", "game-over");
-};
+}
