@@ -70,7 +70,7 @@ HTMLActuator.prototype.addTile = function (tile) {
       self.addTile(merged);
     });
   } else {
-    classes.push("tile-new");
+    classes.push("tilenew");
     this.applyClasses(element, classes);
   }
 
