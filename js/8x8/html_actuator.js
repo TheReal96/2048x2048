@@ -122,4 +122,4 @@ HTMLActuator.prototype.message = function (won) {
 
 HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-won", "game-over");
-}
+};
